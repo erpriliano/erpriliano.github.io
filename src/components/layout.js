@@ -1,48 +1,23 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
-import * as React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
-import "./layout.css"
+import Sidebar from "../components/sidebar"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
+  const [sidebarIsOpen, setSidebarIsOpen] = useState(false)
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `2rem`,
-          }}
-        >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
+      <div className="bg-gray-100 relative min-h-screen md:flex">
+        <Sidebar
+          sidebarIsOpen={sidebarIsOpen}
+          setSidebarIsOpen={() => setSidebarIsOpen(!sidebarIsOpen)}
+        />
+        <div className="flex-1 min-h-screen py-8 px-10">{children}</div>
+      </div>
+      <div className="w-full h-12 bottom-0 inset-x-0 bg-white flex items-center">
+        <p className="mx-auto text-sm font-light">
+          &#169; 2021 - Made with passion, using Gatsby
+        </p>
       </div>
     </>
   )
