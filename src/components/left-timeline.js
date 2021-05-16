@@ -1,6 +1,6 @@
 import React from "react"
 
-const LeftTimeline = ({ year, title }) => {
+const LeftTimeline = ({ year, title, description }) => {
   return (
     <div className="flex md:contents">
       <div className="col-start-5 col-end-6 mr-10 md:mx-auto relative">
@@ -11,7 +11,8 @@ const LeftTimeline = ({ year, title }) => {
       </div>
       <div className="bg-white flex-1 w-full xl:w-3/4 col-start-6 col-end-10 p-4 rounded-xl my-4 mr-auto shadow-md">
         <h3 className="font-semibold text-lg mb-1">{year}</h3>
-        <p className="font-light text-sm">{title}</p>
+        <p className="text-base mb-1 italic">{title}</p>
+        <p className="font-light text-sm leading-relaxed">{description}</p>
       </div>
     </div>
   )

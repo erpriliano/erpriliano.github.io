@@ -9,11 +9,11 @@ const Blogs = ({ data }) => {
   console.log(data)
   return (
     <Layout>
-      <h1 className="text-6xl font-bold tracking-wide">Blog</h1>
+      <h1 className="text-2xl font-bold tracking-wide">Blog</h1>
       <div className="container mt-16">
         {data.allMarkdownRemark.edges.map(edge => (
           <div key={edge.node.id} className="mb-10 flex flex-col">
-            <h1 className="text-2xl font-semibold mb-2">
+            <h1 className="text-xl font-semibold mb-2">
               {edge.node.frontmatter.title}
             </h1>
             <p className="text-xs mb-2 font-extralight">
