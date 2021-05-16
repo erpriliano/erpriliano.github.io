@@ -10,7 +10,7 @@ const Blogs = ({ data }) => {
   return (
     <Layout>
       <h1 className="text-2xl font-bold tracking-wide">Blog</h1>
-      <div className="container mt-16">
+      <div className="container mt-12">
         {data.allMarkdownRemark.edges.map(edge => (
           <div key={edge.node.id} className="mb-10 flex flex-col">
             <h1 className="text-xl font-semibold mb-2">
@@ -23,7 +23,7 @@ const Blogs = ({ data }) => {
             <AniLink
               className="flex space-x-2 items-center"
               paintDrip
-              to="/"
+              to={edge.node.fields.slug}
               color="white"
               duration={1}
             >
@@ -60,6 +60,9 @@ export const query = graphql`
             author
             date(formatString: "MMM Do, YYYY")
             title
+          }
+          fields {
+            slug
           }
           id
         }

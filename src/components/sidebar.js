@@ -113,7 +113,7 @@ const Sidebar = ({ sidebarIsOpen, setSidebarIsOpen }) => {
           <AniLink
             className="block rounded-sm py-2 px-4 hover:bg-gray-800 hover:text-white"
             paintDrip
-            to="/"
+            to="/my-works"
             color="white"
             duration={1}
           >
