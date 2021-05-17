@@ -3,12 +3,13 @@ import { graphql } from "gatsby"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 import Layout from "../components/layout"
-import { node } from "prop-types"
+import Seo from "../components/seo"
 
 const Blogs = ({ data }) => {
   console.log(data)
   return (
     <Layout>
+      <Seo title="Blogs" />
       <h1 className="text-2xl font-bold tracking-wide">Blogs</h1>
       <div className="container mt-12">
         {data.allMarkdownRemark.edges.map(edge => (

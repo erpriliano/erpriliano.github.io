@@ -4,10 +4,12 @@ import Layout from "../components/layout"
 import RightTimeline from "../components/right-timeline"
 import LeftTimeline from "../components/left-timeline"
 import Skills from "../components/skills"
+import Seo from "../components/seo"
 
 const AboutMe = () => {
   return (
     <Layout>
+      <Seo title="About Me" />
       {/* A Glimpse */}
       <h1 className="text-2xl font-bold tracking-wide">A Glimpse</h1>
       <p className="text-base leading-relaxed py-2">

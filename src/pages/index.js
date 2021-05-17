@@ -13,6 +13,7 @@ const IndexPage = () => {
 
   return (
     <Layout>
+      <Seo />
       <div
         className={`min-h-screen -mt-8 flex flex-col justify-center transition ${opacity} duration-1000 delay-500 ease-in-out`}
       >
