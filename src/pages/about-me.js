@@ -9,7 +9,7 @@ const AboutMe = () => {
   return (
     <Layout>
       {/* A Glimpse */}
-      <h1 className="text-xl font-bold tracking-wide">A Glimpse</h1>
+      <h1 className="text-2xl font-bold tracking-wide">A Glimpse</h1>
       <p className="text-base leading-relaxed py-2">
         I am a computer science graduate from Bina Nusantara University in 2013
         and majoring in Software Engineer. As a frontend developer, I love
@@ -20,7 +20,7 @@ const AboutMe = () => {
 
       {/* Careers' Journey */}
       <div className="pt-10 container">
-        <p className="text-xl font-bold tracking-wide mb-2">
+        <p className="text-2xl font-bold tracking-wide mb-2">
           Career's journeys
         </p>
         <div className="flex flex-col md:grid grid-cols-9 md:mx-auto p-2">
@@ -54,7 +54,7 @@ const AboutMe = () => {
 
       {/* Tech & Skill */}
       <div className="pt-10 container">
-        <h1 className="text-xl font-bold tracking-wide mb-2">My skills</h1>
+        <h1 className="text-2xl font-bold tracking-wide mb-2">My skills</h1>
         <Skills title="Languages">
           <img
             alt="HTML5"

@@ -9,7 +9,7 @@ const Blogs = ({ data }) => {
   console.log(data)
   return (
     <Layout>
-      <h1 className="text-2xl font-bold tracking-wide">Blog</h1>
+      <h1 className="text-2xl font-bold tracking-wide">Blogs</h1>
       <div className="container mt-12">
         {data.allMarkdownRemark.edges.map(edge => (
           <div key={edge.node.id} className="mb-10 flex flex-col">

@@ -7,7 +7,7 @@ const Layout = ({ children }) => {
   const [sidebarIsOpen, setSidebarIsOpen] = useState(false)
   return (
     <>
-      <div className="bg-gray-100 relative min-h-screen md:flex">
+      <div className="bg-gray-100 relative min-h-screen md:flex font-OpenSans">
         <Sidebar
           sidebarIsOpen={sidebarIsOpen}
           setSidebarIsOpen={() => setSidebarIsOpen(!sidebarIsOpen)}
