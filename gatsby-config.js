@@ -1,9 +1,11 @@
+require("dotenv").config({ path: `.env` })
+
 module.exports = {
   siteMetadata: {
     title: `Personal Website`,
     description: `This is my personal website, I am a frontend developer and a father of two children. I am building this website with love and passion, so have a look`,
     author: `Erpriliano Abbas`,
-    siteUrl: `https://erpriliano.github.io`,
+    siteUrl: process.env.GATSBY_ROOT_URL,
   },
   plugins: [
     `gatsby-plugin-transition-link`,
@@ -15,7 +17,7 @@ module.exports = {
       options: {
         // You can add multiple tracking ids and a pageview event will be fired for all of them.
         trackingIds: [
-          "G-2DT292LDRM", // Google Analytics / GA
+          process.env.GATSBY_MEASURE_ID, // Google Analytics / GA
         ],
         // This object is used for configuration specific to this plugin
         pluginConfig: {
