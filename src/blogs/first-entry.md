@@ -22,4 +22,4 @@ Anything that comes to mind, I'm gonna express it here, **_yes, anything_**. Hop
 Here's a picture of a mango juice, because at this time I'd really wanna drink one.
 <br/><br/>
 
-![](https://images.unsplash.com/photo-1575159240102-4331f59433ac?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80)
+<img src="https://images.unsplash.com/photo-1575159240102-4331f59433ac?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80" alt="mango-juice" width="250" />
