@@ -11,7 +11,9 @@ const BlogPost = ({ data }) => {
         title={data.markdownRemark.frontmatter.title}
         description={data.markdownRemark.excerpt}
       />
-      <h1 className="text-4xl mb-2">{data.markdownRemark.frontmatter.title}</h1>
+      <h1 className="text-4xl mb-2 font-semibold">
+        {data.markdownRemark.frontmatter.title}
+      </h1>
       <p className="text-sm mb-4 font-extralight">
         Created on {data.markdownRemark.frontmatter.date} by{" "}
         {data.markdownRemark.frontmatter.author}
