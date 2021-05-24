@@ -46,6 +46,18 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: `gatsby-remark-classes`,
+            options: {
+              classMap: {
+                "heading[depth=1]": "text-3xl font-semibold mb-1",
+                "heading[depth=2]": "text-2xl font-semibold mb-1",
+                "heading[depth=3]": "text-xl font-semibold mb-1",
+                list: "list-decimal font-semibold mb-1 list-inside",
+                link: "text-blue-500 font-semibold",
+              },
+            },
+          },
+          {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 800,
