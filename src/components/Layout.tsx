@@ -20,7 +20,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         </div>
         <div className="w-full h-12 bottom-0 inset-x-0 bg-white flex items-center">
           <p className="mx-auto text-sm font-light">
-            &#169; 2021 - Made with passion, using Gatsby
+            &#169; 2023 - Made with passion, using Gatsby
           </p>
         </div>
       </React.Fragment>
