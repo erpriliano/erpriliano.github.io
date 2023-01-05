@@ -1,48 +1,18 @@
-import * as React from "react"
-import PropTypes from "prop-types"
-import { Helmet } from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import * as React from "react";
+import PropTypes from "prop-types";
+import { Helmet } from "react-helmet";
 
 const Seo = ({ title, description, author, siteUrl }) => {
-  const { site } = useStaticQuery(query)
-
-  const {
-    defaultTitle,
-    defaultDescription,
-    defaultAuthor,
-    defaultSiteUrl,
-  } = site.siteMetadata
-
-  const seo = {
-    title: title || defaultTitle,
-    description: description || defaultDescription,
-    author: author || defaultAuthor,
-    siteUrl: siteUrl || defaultSiteUrl,
-  }
-
   return (
-    <Helmet title={seo.title}>
-      <meta name="description" content={seo.description} />
-      <meta name="author" content={seo.author} />
-      <meta property="og:url" content={seo.siteUrl} />
+    <Helmet title={title}>
+      <meta name="description" content={description} />
+      <meta name="author" content={author} />
+      <meta property="og:url" content={siteUrl} />
     </Helmet>
-  )
+  );
 }
 
 export default Seo
-
-const query = graphql`
-  query Seo {
-    site {
-      siteMetadata {
-        defaultAuthor: author
-        defaultDescription: description
-        defaultsiteUrl: siteUrl
-        defaultTitle: title
-      }
-    }
-  }
-`
 
 Seo.propTypes = {
   title: PropTypes.string,
@@ -53,7 +23,7 @@ Seo.propTypes = {
 
 Seo.defaultProps = {
   title: null,
-  description: null,
-  author: null,
-  siteUrl: null,
+  description: "This is my personal website built with GatsbyJs. I am a senior frontend developer who fell in love with JavaScript and ReactJs.",
+  author: "Erpriliano Abbas",
+  siteUrl: "https://erpriliano.github.io/",
 }

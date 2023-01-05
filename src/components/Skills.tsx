@@ -1,6 +1,11 @@
 import React from "react"
 
-const Skills = ({ title, children }) => {
+interface SkillsProps {
+  title: string
+  children: React.ReactNode
+}
+
+const Skills: React.FC<SkillsProps> = ({ title, children }) => {
   return (
     <div className="mb-3">
       <h3 className="text-base font-normal text-gray-600 mb-2">{title}</h3>

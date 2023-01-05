@@ -1,6 +1,16 @@
 import React from "react"
 
-const RightTimeline = ({ year, title, description }) => {
+export interface TimelineProps {
+  year: string
+  title: string
+  description: string
+}
+
+const RightTimeline: React.FC<TimelineProps> = ({
+  year,
+  title,
+  description,
+}) => {
   return (
     <div className="flex flex-row-reverse md:contents">
       <div className="bg-white flex-1 w-full xl:w-3/4 col-start-1 col-end-5 p-4 rounded-xl my-4 ml-auto shadow-md">

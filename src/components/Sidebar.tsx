@@ -1,7 +1,16 @@
 import React from "react"
-import AniLink from "gatsby-plugin-transition-link/AniLink"
+import AniLink from "gatsby-plugin-transition-link/AniLink";
+import { Routes } from "../utils/personalData"
 
-const Sidebar = ({ sidebarIsOpen, setSidebarIsOpen }) => {
+interface SidebarProps {
+  sidebarIsOpen: boolean
+  setSidebarIsOpen: () => void
+}
+
+const Sidebar: React.FC<SidebarProps> = ({
+  sidebarIsOpen,
+  setSidebarIsOpen,
+}) => {
   return (
     <>
       <div className="bg-white text-black flex justify-between md:hidden">
@@ -92,42 +101,17 @@ const Sidebar = ({ sidebarIsOpen, setSidebarIsOpen }) => {
         </AniLink>
         {/* nav */}
         <nav>
-          <AniLink
-            className="block rounded-sm py-2 px-4 hover:bg-gray-800 hover:text-white"
-            paintDrip
-            to="/"
-            color="white"
-            duration={1}
-          >
-            Home
-          </AniLink>
-          <AniLink
-            className="block rounded-sm py-2 px-4 hover:bg-gray-800 hover:text-white"
-            paintDrip
-            to="/about-me"
-            color="white"
-            duration={1}
-          >
-            About Me
-          </AniLink>
-          <AniLink
-            className="block rounded-sm py-2 px-4 hover:bg-gray-800 hover:text-white"
-            paintDrip
-            to="/my-works"
-            color="white"
-            duration={1}
-          >
-            My Works
-          </AniLink>
-          <AniLink
-            className="block rounded-sm py-2 px-4 hover:bg-gray-800 hover:text-white"
-            paintDrip
-            to="/blogs"
-            color="white"
-            duration={1}
-          >
-            Blogs
-          </AniLink>
+          {Routes.map(route => (
+            <AniLink
+              className="block rounded-sm py-2 px-4 hover:bg-gray-800 hover:text-white"
+              paintDrip
+              to={route.to}
+              color="white"
+              duration={1}
+            >
+              {route.title}
+            </AniLink>
+          ))}
         </nav>
       </div>
     </>

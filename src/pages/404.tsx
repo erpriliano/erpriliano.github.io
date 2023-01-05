@@ -1,9 +1,8 @@
-import * as React from "react"
+import React from "react"
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+import { Layout, Seo } from "../components"
 
-const NotFoundPage = () => (
+const NotFoundPage: React.FC<{}> = () => (
   <Layout>
     <Seo title="404: Not found" />
     <div className="min-h-screen flex flex-col justify-center">

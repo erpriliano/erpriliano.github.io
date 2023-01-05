@@ -1,6 +1,11 @@
 import React from "react"
+import { TimelineProps } from "./RightTimeline"
 
-const LeftTimeline = ({ year, title, description }) => {
+const LeftTimeline: React.FC<TimelineProps> = ({
+  year,
+  title,
+  description,
+}) => {
   return (
     <div className="flex md:contents">
       <div className="col-start-5 col-end-6 mr-10 md:mx-auto relative">
