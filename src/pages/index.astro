@@ -1,0 +1,120 @@
+---
+import { getCollection } from "astro:content"
+import BaseLayout from "../components/BaseLayout.astro"
+import Hero from "../components/Hero.astro"
+import SectionHeading from "../components/SectionHeading.astro"
+import { experience, profile, projects, skills } from "../data/profile"
+
+const posts = (await getCollection("writing")).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+)
+---
+
+<BaseLayout>
+  <Hero />
+
+  <section id="experience" class="section">
+    <SectionHeading
+      eyebrow="Experience"
+      title="A practical frontend path"
+      description={profile.summary}
+    />
+    <div class="timeline">
+      {
+        experience.map(item => (
+          <article class="timeline-item">
+            <time>{item.year}</time>
+            <div>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section id="work" class="section">
+    <SectionHeading
+      eyebrow="Work"
+      title="Selected focus areas"
+      description="Representative areas from recent frontend and product work."
+    />
+    <div class="card-grid">
+      {
+        projects.map(project => (
+          <article class="card">
+            <h3>{project.title}</h3>
+            <p>{project.description}</p>
+            <div class="tag-list">
+              {project.tags.map(tag => (
+                <span>{tag}</span>
+              ))}
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section">
+    <SectionHeading
+      eyebrow="Skills"
+      title="Tools I use to ship"
+      description="A concise snapshot of the stack and collaboration habits behind the work."
+    />
+    <div class="skill-list">
+      {
+        skills.map(group => (
+          <article>
+            <h3>{group.title}</h3>
+            <p>{group.items.join(" / ")}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section">
+    <SectionHeading
+      eyebrow="Writing"
+      title="Notes and older posts"
+      description="A small archive migrated from the original Gatsby site."
+    />
+    <div class="writing-list">
+      {
+        posts.slice(0, 3).map(post => (
+          <a href={`/writing/${post.id}/`}>
+            <time>
+              {post.data.date.toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "short",
+                day: "numeric",
+              })}
+            </time>
+            <strong>{post.data.title}</strong>
+            {post.data.description && <span>{post.data.description}</span>}
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <section id="contact" class="section contact-band">
+    <SectionHeading
+      eyebrow="Contact"
+      title="Let’s talk about frontend work"
+      description="Reach out for product UI, web application, or mobile interface work."
+    />
+    <div class="contact-links">
+      {
+        profile.socials.map(social => (
+          <a href={social.href} target="_blank" rel="noreferrer">
+            {social.label}
+          </a>
+        ))
+      }
+      <a href={profile.email}>Email</a>
+    </div>
+  </section>
+</BaseLayout>

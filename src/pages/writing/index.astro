@@ -1,0 +1,42 @@
+---
+import { getCollection } from "astro:content"
+import BaseLayout from "../../components/BaseLayout.astro"
+import SectionHeading from "../../components/SectionHeading.astro"
+
+const posts = (await getCollection("writing")).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+)
+---
+
+<BaseLayout
+  title="Writing - Erpriliano Abbas"
+  description="Writing archive for Erpriliano Abbas."
+>
+  <section class="section page-intro">
+    <SectionHeading
+      eyebrow="Writing"
+      title="Notes, learning, and older posts"
+      description="Migrated writing from the original Gatsby portfolio."
+    />
+  </section>
+
+  <section class="section">
+    <div class="writing-list large">
+      {
+        posts.map(post => (
+          <a href={`/writing/${post.id}/`}>
+            <time>
+              {post.data.date.toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "short",
+                day: "numeric",
+              })}
+            </time>
+            <strong>{post.data.title}</strong>
+            {post.data.description && <span>{post.data.description}</span>}
+          </a>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>
