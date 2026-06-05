@@ -1,13 +1,8 @@
 ---
-import { getCollection } from "astro:content"
 import BaseLayout from "../components/BaseLayout.astro"
 import Hero from "../components/Hero.astro"
 import SectionHeading from "../components/SectionHeading.astro"
 import { experience, profile, projects, skills } from "../data/profile"
-
-const posts = (await getCollection("writing")).sort(
-  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
-)
 ---
 
 <BaseLayout>
@@ -70,31 +65,6 @@ const posts = (await getCollection("writing")).sort(
             <h3>{group.title}</h3>
             <p>{group.items.join(" / ")}</p>
           </article>
-        ))
-      }
-    </div>
-  </section>
-
-  <section class="section">
-    <SectionHeading
-      eyebrow="Writing"
-      title="Notes and older posts"
-      description="A small archive migrated from the original Gatsby site."
-    />
-    <div class="writing-list">
-      {
-        posts.slice(0, 3).map(post => (
-          <a href={`/writing/${post.id}/`}>
-            <time>
-              {post.data.date.toLocaleDateString("en-US", {
-                year: "numeric",
-                month: "short",
-                day: "numeric",
-              })}
-            </time>
-            <strong>{post.data.title}</strong>
-            {post.data.description && <span>{post.data.description}</span>}
-          </a>
         ))
       }
     </div>

@@ -184,7 +184,6 @@ nav a:hover,
 }
 
 .hero-aside span,
-.writing-list time,
 .article time {
   display: block;
   color: var(--muted);
@@ -293,34 +292,6 @@ p {
   border-top: 1px solid var(--line);
 }
 
-.writing-list {
-  display: grid;
-  gap: 12px;
-}
-
-.writing-list a {
-  display: grid;
-  grid-template-columns: 140px minmax(0, 1fr);
-  gap: 20px;
-  align-items: baseline;
-  padding: 18px 0;
-  border-top: 1px solid var(--line);
-  text-decoration: none;
-}
-
-.writing-list.large a {
-  grid-template-columns: 180px minmax(0, 1fr);
-}
-
-.writing-list strong {
-  font-size: 1.08rem;
-}
-
-.writing-list span {
-  grid-column: 2;
-  color: var(--muted);
-}
-
 .contact-band {
   padding-bottom: 96px;
 }
@@ -409,14 +380,8 @@ p {
     padding-top: 48px;
   }
 
-  .timeline-item,
-  .writing-list a,
-  .writing-list.large a {
+  .timeline-item {
     grid-template-columns: 1fr;
     gap: 6px;
-  }
-
-  .writing-list span {
-    grid-column: 1;
   }
 }
