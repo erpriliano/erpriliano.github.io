@@ -1,0 +1,26 @@
+---
+import { profile } from "../data/profile"
+import profileImage from "../images/icon_developer.png"
+---
+
+<section class="hero section">
+  <div class="hero-copy">
+    <p class="eyebrow">{profile.location}</p>
+    <h1>{profile.name}</h1>
+    <p class="lead">
+      {profile.role} building clear, maintainable web and mobile interfaces.
+    </p>
+    <p>{profile.intro}</p>
+    <div class="actions">
+      <a class="button primary" href="#work">View work</a>
+      <a class="button secondary" href="#contact">Contact</a>
+    </div>
+  </div>
+  <div class="hero-aside" aria-label="Profile summary">
+    <img src={profileImage.src} width="168" height="168" alt="Developer icon" />
+    <div>
+      <span>Currently focused on</span>
+      <strong>Frontend engineering, UI quality, and product delivery.</strong>
+    </div>
+  </div>
+</section>

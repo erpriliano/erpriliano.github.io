@@ -1,0 +1,26 @@
+{
+  "name": "erpriliano.github.io",
+  "type": "module",
+  "private": true,
+  "version": "2.0.0",
+  "description": "Personal portfolio website for Erpriliano Abbas.",
+  "author": "Erpriliano Abbas",
+  "license": "0BSD",
+  "scripts": {
+    "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
+    "start": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
+    "build": "ASTRO_TELEMETRY_DISABLED=1 astro check && ASTRO_TELEMETRY_DISABLED=1 astro build",
+    "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
+    "format": "prettier --plugin=prettier-plugin-astro --write \"**/*.{astro,css,js,json,md,ts,yml}\""
+  },
+  "dependencies": {
+    "@astrojs/check": "latest",
+    "@astrojs/sitemap": "latest",
+    "astro": "latest",
+    "typescript": "latest"
+  },
+  "devDependencies": {
+    "prettier": "latest",
+    "prettier-plugin-astro": "^0.14.1"
+  }
+}
