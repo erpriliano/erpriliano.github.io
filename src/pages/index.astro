@@ -11,7 +11,7 @@ import { experience, profile, projects, skills } from "../data/profile"
   <section id="experience" class="section">
     <SectionHeading
       eyebrow="Experience"
-      title="A practical frontend path"
+      title="Building products, platforms, and engineering excellence"
       description={profile.summary}
     />
     <div class="timeline">
@@ -29,18 +29,20 @@ import { experience, profile, projects, skills } from "../data/profile"
     </div>
   </section>
 
-  <section id="work" class="section">
+  <section id="expertise" class="section">
     <SectionHeading
-      eyebrow="Work"
-      title="Selected focus areas"
-      description="Representative areas from recent frontend and product work."
+      eyebrow="Expertise"
+      title="Areas of Expertise"
+      description="A snapshot of the technologies, systems, and engineering practices I work with most."
     />
     <div class="card-grid">
       {
         projects.map(project => (
           <article class="card">
-            <h3>{project.title}</h3>
-            <p>{project.description}</p>
+            <div class="card-copy">
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+            </div>
             <div class="tag-list">
               {project.tags.map(tag => (
                 <span>{tag}</span>
@@ -52,11 +54,11 @@ import { experience, profile, projects, skills } from "../data/profile"
     </div>
   </section>
 
-  <section class="section">
+  <section id="skills" class="section">
     <SectionHeading
       eyebrow="Skills"
-      title="Tools I use to ship"
-      description="A concise snapshot of the stack and collaboration habits behind the work."
+      title="Technologies & Engineering Practices"
+      description="The technologies, tools, and engineering approaches I use to build scalable and maintainable software."
     />
     <div class="skill-list">
       {
@@ -73,8 +75,8 @@ import { experience, profile, projects, skills } from "../data/profile"
   <section id="contact" class="section contact-band">
     <SectionHeading
       eyebrow="Contact"
-      title="Let’s talk about frontend work"
-      description="Reach out for product UI, web application, or mobile interface work."
+      title="Let's work together"
+      description="Open to opportunities involving frontend engineering, platform initiatives, architecture, and AI-assisted software development."
     />
     <div class="contact-links">
       {
